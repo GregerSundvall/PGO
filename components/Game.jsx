@@ -40,6 +40,7 @@ const Game = () => {
                 <Pokedex />
             </PokemonProvider>
             <NavBar 
+                
                 goToExplorer={() => setCurrentView("Explorer")}
                 goToStorage={() => setCurrentView("Storage")}
                 goToPokedex={() => setCurrentView("Pokedex")}
