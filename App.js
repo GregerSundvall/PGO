@@ -6,7 +6,7 @@ import Game from "./components/Game";
 export default function App() {
   return (
       <View style={styles.container}>
-        <Game />
+        <Game style={styles.container} />
       </View>
   );
 }
@@ -17,5 +17,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+      border: 1,
   },
 });

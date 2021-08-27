@@ -3,7 +3,7 @@ import React from "react";
 
 const Pokedex = () => {
     return(
-        <View>
+        <View style={{flex:9}}>
             <Text>Pokedex view</Text>
         </View>
     )

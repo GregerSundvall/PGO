@@ -3,7 +3,7 @@ import React from "react";
 
 const Storage = () => {
     return(
-        <View>
+        <View style={{flex:9}}>
             <Text>Storage view</Text>
         </View>
     )
