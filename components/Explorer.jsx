@@ -5,10 +5,6 @@ const Explorer = () => {
 
     const [modalVisible, setModalVisible] = useState(true);
     
-    
-    
-    
-    
     return(
         <View style={{
                 flex:9,

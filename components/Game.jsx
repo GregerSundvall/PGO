@@ -8,15 +8,6 @@ import Pokedex from "./Pokedex";
 const Game = () => {
     const [currentView, setCurrentView] = useState("Explorer");
     let content;
-    
-    const pokedex = [
-        {id:1, name:'Bulbasaur', caught:false},
-        {id:2, name:'Charizard', caught:false},
-        {id:3, name:'Lucario', caught:false},
-        {id:4, name:'Pikachu', caught:false},
-        {id:5, name:'Snorlax', caught:false},
-        {id:6, name:'Blissey', caught:false},
-    ]
 
     switch (currentView) {
         case "Explorer" : content = <Explorer />; break;

@@ -1,11 +1,12 @@
 import {Text, View} from "react-native";
-import React, {useState} from "react";
+import React from "react";
 
 const NavBar = ({goToExplorer, goToStorage, goToPokedex}) => {
     
     return(
         <View style={{flexDirection:"row",
-                flex: 1
+                flex: 1,
+            backgroundColor: '#bbf'
             }}>
             <View onClick={goToExplorer} style={{
                     flex:1,
