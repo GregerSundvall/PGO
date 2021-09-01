@@ -1,17 +1,16 @@
-import {Text, View, FlatList, Image, StyleSheet, Pressable, ScrollView} from "react-native";
+import {Text, View, Image, StyleSheet, Pressable, ScrollView} from "react-native";
 import React, {useContext} from "react";
 import MyContext from "../MyContext";
 
-const Storage = () => {
-    const context = useContext(MyContext);
-
+const Pokedex = () => {
     return(
         <View style={{flex:9}}>
             <MyContext.Consumer style={{flex:1}}>
                 {context => (
                     <View style={{flex:1}}>
                         <View style={styles.title}>
-                            <Text>Here are all your awesome Pokemon!</Text>
+                            <Text>Pokedex
+                            </Text>
                         </View>
                         <View style={{flex: 8}}>
                             <ScrollView
@@ -22,9 +21,7 @@ const Storage = () => {
                                     <View style={styles.item} key={item.id}>
                                         <Image source={require('../images/map.jpeg')} style={styles.image}/>
                                         <Text>{item.name}</Text>
-                                        <Pressable onPress={() => {context.remove(item.id)}} style={styles.button}>
-                                            <Text>Delete</Text>
-                                        </Pressable>
+                                        
                                     </View>
                                 )}
                             </ScrollView>
@@ -37,7 +34,7 @@ const Storage = () => {
         
     )
 }
-export default Storage;
+export default Pokedex;
 
 const styles = StyleSheet.create({
     image: {
