@@ -6,33 +6,35 @@ const Storage = () => {
     const context = useContext(MyContext);
 
     return(
-        <MyContext.Consumer style={{flex:9}}>
-            {context => (
-                <View style={{flex:1}}>
-                    <View style={styles.title}>
-                        <Text>Here are all your awesome Pokemon!</Text>
+        <View style={{flex:9}}>
+            <MyContext.Consumer style={{flex:1}}>
+                {context => (
+                    <View style={{flex:1}}>
+                        <View style={styles.title}>
+                            <Text>Here are all your awesome Pokemon!</Text>
+                        </View>
+                        <View style={{flex: 8}}>
+                            <ScrollView
+                                style={{flex: 1}}
+                                contentContainerStyle={{flex: 1}}
+                            >
+                                {context.pokemon.map((item) =>
+                                    <View style={styles.item} key={item.id}>
+                                        <Image source={require('../images/map.jpeg')} style={styles.image}/>
+                                        <Text>{item.name}</Text>
+                                        <Pressable onPress={() => {context.remove(item.id)}} style={styles.button}>
+                                            <Text>Delete</Text>
+                                        </Pressable>
+                                    </View>
+                                )}
+                            </ScrollView>
+                        </View>
+                        
                     </View>
-                    <ScrollView style={{flex: 8}}>
-                        <FlatList
-                            style={{flex: 1}}
-                            numColumns={3}
-                            contentContainerStyle={{flexGrow: 1}}
-                            columnWrapperStyle={{justifyContent: 'space-around'}}
-                            data={context.pokemon}
-                            renderItem={({item}) =>
-                                <View style={styles.item}>
-                                    <Image source={require('../images/map.jpeg')} style={styles.image}/>
-                                    <Text>{item.name}</Text>
-                                    <Pressable onPress={() => {context.remove(item.id)}} style={styles.button}>
-                                        <Text>Delete</Text>
-                                    </Pressable>
-                                </View>}
-                            keyExtractor={item => item.id}
-                        />
-                    </ScrollView>
-                </View>
-            )}
-        </MyContext.Consumer>
+                )}
+            </MyContext.Consumer>
+        </View>
+        
     )
 }
 export default Storage;

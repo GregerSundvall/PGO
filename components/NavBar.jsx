@@ -6,7 +6,7 @@ const NavBar = ({goToExplorer, goToStorage, goToPokedex}) => {
     return(
         <View style={{flexDirection:"row",
                 flex: 1,
-            backgroundColor: '#bbf'
+                backgroundColor: '#bbf'
             }}>
             <View onClick={goToExplorer} style={{
                     flex:1,
